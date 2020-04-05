@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.2 Vue 模块语法，常用指令，事件绑定 | Ramsey&#39;s blog</title>
+    <meta name="description" content="1. 前置准备
+使用npm方式创建一个vue项目
+开发工具：Visual Studio Code
+手动创建package.json
+创建一个文件夹，用来放这个项目，在该文件夹中创建一个index.html文件
+有终端的跳过该步骤
+  点击插件，搜索terminal，点击install安装
+![在这里插入图片描述](https://img-blog.c ...">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.67194d42.css" as="style"><link rel="preload" href="/myblog/assets/js/app.83445d2a.js" as="script"><link rel="preload" href="/myblog/assets/js/6.6f8c6495.js" as="script"><link rel="preload" href="/myblog/assets/js/5.0a2aadd6.js" as="script"><link rel="preload" href="/myblog/assets/js/32.625eeea9.js" as="script"><link rel="prefetch" href="/myblog/assets/js/1.8f603fcf.js"><link rel="prefetch" href="/myblog/assets/js/10.187cbb26.js"><link rel="prefetch" href="/myblog/assets/js/11.5f06147e.js"><link rel="prefetch" href="/myblog/assets/js/12.bb05e588.js"><link rel="prefetch" href="/myblog/assets/js/13.4b51155c.js"><link rel="prefetch" href="/myblog/assets/js/14.4b1b6571.js"><link rel="prefetch" href="/myblog/assets/js/15.dad8c3dc.js"><link rel="prefetch" href="/myblog/assets/js/16.58a5ad79.js"><link rel="prefetch" href="/myblog/assets/js/17.724a78c4.js"><link rel="prefetch" href="/myblog/assets/js/18.d2b827cf.js"><link rel="prefetch" href="/myblog/assets/js/19.e27965ac.js"><link rel="prefetch" href="/myblog/assets/js/20.5073a4a9.js"><link rel="prefetch" href="/myblog/assets/js/21.5b387220.js"><link rel="prefetch" href="/myblog/assets/js/22.fcb4a7d0.js"><link rel="prefetch" href="/myblog/assets/js/23.fef71a58.js"><link rel="prefetch" href="/myblog/assets/js/24.04e183c3.js"><link rel="prefetch" href="/myblog/assets/js/25.cd0e6b28.js"><link rel="prefetch" href="/myblog/assets/js/26.42b04f43.js"><link rel="prefetch" href="/myblog/assets/js/27.6c93f3a8.js"><link rel="prefetch" href="/myblog/assets/js/28.e6223993.js"><link rel="prefetch" href="/myblog/assets/js/29.23cf8e42.js"><link rel="prefetch" href="/myblog/assets/js/30.dd6589fb.js"><link rel="prefetch" href="/myblog/assets/js/31.d2ee6cc1.js"><link rel="prefetch" href="/myblog/assets/js/33.dff70694.js"><link rel="prefetch" href="/myblog/assets/js/34.a9bdba30.js"><link rel="prefetch" href="/myblog/assets/js/35.3c3e7848.js"><link rel="prefetch" href="/myblog/assets/js/36.b91e5f60.js"><link rel="prefetch" href="/myblog/assets/js/37.f98ec487.js"><link rel="prefetch" href="/myblog/assets/js/38.68b9195f.js"><link rel="prefetch" href="/myblog/assets/js/4.b47da9d4.js"><link rel="prefetch" href="/myblog/assets/js/7.71b07d0b.js"><link rel="prefetch" href="/myblog/assets/js/8.c9b79773.js"><link rel="prefetch" href="/myblog/assets/js/9.53d5252b.js"><link rel="prefetch" href="/myblog/assets/js/vuejs-paginate.fe9a8bd7.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.67194d42.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/myblog/" class="nav-link home-link">Ramsey's blog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/myblog/" class="nav-link">Blog</a></li><li class="nav-item"><a href="/myblog/tag/" class="nav-link">Tags</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/myblog/" class="nav-link mobile-home-link">Ramsey's blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/myblog/" class="nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/myblog/tag/" class="nav-link">Tags</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><div class="vuepress-blog-theme-content"><div class="content__default"><h1 id="_1-2-vue-模块语法，常用指令，事件绑定"><a href="#_1-2-vue-模块语法，常用指令，事件绑定" class="header-anchor">#</a> 1.2 Vue 模块语法，常用指令，事件绑定</h1> <h4 id="_1-前置准备"><a href="#_1-前置准备" class="header-anchor">#</a> 1. 前置准备</h4> <p>使用npm方式创建一个vue项目
+开发工具：Visual Studio Code
+<strong>手动创建package.json</strong></p> <ol><li>创建一个文件夹，用来放这个项目，在该文件夹中创建一个index.html文件</li> <li>有终端的跳过该步骤
+点击插件，搜索terminal，点击install安装
+<img src="https://img-blog.csdnimg.cn/20200204124511936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li> <li>右击index.html文件选中终端进入命令行
+<img src="https://img-blog.csdnimg.cn/20200204124738617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li> <li>终端输入命令<code>npm init</code> <img src="https://img-blog.csdnimg.cn/20200204124958727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li> <li>创建的步骤<img src="https://img-blog.csdnimg.cn/20200204130301129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li></ol> <p><strong>还有一种快捷的方式可以一键生成package.json</strong>
+命令<code>npm init -y</code>会使用默认的配置生成package.json</p> <p>生成后的package.json也可以随意改动，这里面的license看一下是不是MIT</p> <p><strong>安装vue</strong>
+安装vue命令：<code>npm install vue</code>
+完成后package.json会写入vue的版本，并且文件夹下多出node_modules文件夹，在该文件夹下的dist中就有下载的vue所有的源码，在node_moudules下面的LICENSE打开可以看见，是刚刚配置的开源协议中的一种——MIT协议
+<img src="https://img-blog.csdnimg.cn/20200204131139883.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> <strong>入口文件引入vue</strong>
+在index.html中引入<code>&lt;script src=&quot;node_modules/vue/dist/vue.min.js&quot;&gt;&lt;/script&gt;</code>即可
+<img src="https://img-blog.csdnimg.cn/20200204132007908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> <strong>index.html</strong></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ie=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>node_modules/vue/dist/vue.min.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        {{title}}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span><span class="token comment">// 告诉Vue实例，数据要往哪个dom结构上绑定</span>
+            data<span class="token operator">:</span> <span class="token punctuation">{</span>
+                title<span class="token operator">:</span> <span class="token string">'hello world'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="https://img-blog.csdnimg.cn/2020020413340535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODI2NjE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <h4 id="_2-模块语法"><a href="#_2-模块语法" class="header-anchor">#</a> 2. 模块语法</h4> <p>什么是模块语法
+基于HTML的模板语法，允许开发者声明式地将DOM绑定至底层Vue实例的数据。</p> <p><strong>文本（变量）差值</strong></p> <ul><li>使用“Mustache”语法（双大括号）<div class="language- extra-class"><pre class="language-text"><code>&lt;div&gt;title:{{title}}&lt;/div&gt;
+</code></pre></div></li> <li>在标签上使用v-once,执行一次绑定，title改变，视图不会再发生改变<div class="language- extra-class"><pre class="language-text"><code>&lt;div v-once&gt;title:{{ title }}&lt;/div&gt;
+</code></pre></div></li> <li>标签上属性插值，使用v-bind指令插值（id），通常可以简写为冒号+变量的形式<div class="language- extra-class"><pre class="language-text"><code>&lt;div v-bind:id=&quot;myId&quot;&gt;&lt;/div&gt;
+</code></pre></div>也可以简写为<div class="language- extra-class"><pre class="language-text"><code>&lt;div :id=&quot;myId&quot;&gt;&lt;/div&gt;
+</code></pre></div></li></ul> <p><strong>HTML内容</strong></p> <ul><li>如果使用“Mustache”语法(双大括号)，html内容将会原样输出<div class="language- extra-class"><pre class="language-text"><code>var htmlStr = '&lt;div style=&quot;color:red&quot;&gt;xxx&lt;/div&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;div&gt;title:{{htmlStr}}&lt;/div&gt;
+</code></pre></div></li> <li>在标签上使用v-html，可以解析出正常的html填充下面的div<div class="language- extra-class"><pre class="language-text"><code>&lt;div v-html='htmlStr'&gt;&lt;/div&gt;
+</code></pre></div>注意：使用v-html要防止被XSS攻击（可信内容或处理用户输入内容之后插值）</li></ul> <p><strong>使用JS表达式</strong></p> <ul><li>Vue支持JavaScript表达式插值<div class="language- extra-class"><pre class="language-text"><code>{{number + 1}},{{ok ? 'YES' : 'NO'}},
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{{message.split('').reverse().join('')}}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;div v-bind:id=&quot;'list'-' + id&quot;&gt;&lt;/div&gt;
+</code></pre></div>注意：不能再<code>{{}}</code>中定义变量或者是写一些if语句</li></ul> <h4 id="_3-常用指令"><a href="#_3-常用指令" class="header-anchor">#</a> 3. 常用指令</h4> <p>什么是指令
+指令（Directives）是带有v-前缀的特殊特性
+指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。</p> <p><strong>常规内置指令</strong></p> <ul><li>v-clock 解决初始化慢导致页面闪动的最佳实践，它会在ue实例结束编译时从绑定的HTML元素上移除。</li> <li>v-if、v-else-if、v-else 将根据表达式绑定值的真假，插入或删除所绑定的元素。</li> <li>v-show 将根据表达式绑定值的真假，显示或隐藏所绑定的元素。</li> <li>v-on 用于监听DOM事件。
+比如:<div class="language- extra-class"><pre class="language-text"><code>&lt;a v-on:click=&quot;doSomething&quot;&gt;...&lt;/a&gt;
+</code></pre></div>也可以缩写为<div class="language- extra-class"><pre class="language-text"><code>&lt;a @click=&quot;doSomething&quot;&gt;...&lt;/a&gt;
+</code></pre></div></li> <li>v-bind 可以用于响应式地更新HTML特性。<div class="language- extra-class"><pre class="language-text"><code>&lt;a v-bind:href=&quot;url&quot;&gt;...&lt;/a&gt;
+</code></pre></div>也可以缩写为<div class="language- extra-class"><pre class="language-text"><code>&lt;a :href=&quot;url&quot;&gt;…&lt;/a&gt;
+</code></pre></div>在这里 href 是参数,告知 v-bind 指令将该元素的 href 特性与表达式url的值绑定。</li></ul> <p><strong>表单内置指令</strong></p> <ul><li>v-for 将一个数组遍历或枚举一个对象循环显示。<div class="language- extra-class"><pre class="language-text"><code>lessonArray = [{name:'test1'},{name:'test2'},{name:'test3'}]
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;ul&gt;&lt;li v-for='(item,index) in lessonArray'&gt;{{item.name}}&lt;/li&gt;&lt;/ul&gt;
+</code></pre></div>注意:一般在渲染列表时，我们需要加上key，优化渲染。</li> <li>v-model 用于在表单类元素上双向绑定数据。<div class="language- extra-class"><pre class="language-text"><code>&lt;input type='text' v-model='name'/&gt;
+</code></pre></div>注意：使用v-model后，表单控件显示的值只依赖所绑定的数据，不再关心初始化时的value属性，如果希望实时更新，可以用@input来替代。<div class="language- extra-class"><pre class="language-text"><code>&lt;input type='text' @input='handleInput'/&gt;
+</code></pre></div></li></ul> <h4 id="_4-事件绑定"><a href="#_4-事件绑定" class="header-anchor">#</a> 4. 事件绑定</h4> <p>可以用v-on指令监听DOM事件，并在触发时运行一些 JavaScript代码。
+<strong>内联处理器</strong>
+使用v-on指令去监听DOM事件,后面可以接事件类型。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;button v-on:click=&quot;say('hello Vue', $event)&quot;&gt;Say hello Vue&lt;/button&gt;
+say: function(message){
+alert(message)
+}
+</code></pre></div><p>有时也需要在內联语句处理器中访问原始的DOM事件,此时传入$event。
+<strong>事件修饰符</strong>
+修饰符是由点开头的指令后缀来表示。
+v-on:click.stop、v-on:submit.prevent、v-on:click.stop.prevent、
+v-on:click.capture、v-on:click.self、v-on: click.once、v-on:scroll.passive
+注意：使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。
+<strong>按钮修饰符</strong>
+监听键盘事件时，经常需要检査详细的按键。允许为ν-on在监听键盘事件时添加按键修饰符。
+v-on:keyup.enter、v-on:keyup.page-down、v-on:click.stop.prevent、
+v-on:click.capture、v-on:click.self、v-on:click.once、v-on:scroll.passive
+注意：使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。
+另外 keyCode事件用法已经被废弃(老旧浏览器可能支持)。
+<strong>系统修饰键</strong>
+可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。
+<code>.ctrl、.alt、.shift、.meta</code> <code>&lt;!--按下Alt+Ctrl键-&gt;</code> <code>&lt;input @keyup.alt.67&quot;clear&quot;&gt;</code> <code>&lt;!--按下ctrl键+点击--&gt;</code></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div @click.ctrl=&quot;doSomething&quot;&gt;Do something&lt;/div&gt;
+</code></pre></div><p><strong>其他修饰符</strong></p> <ul><li>.exact修饰符
+允许你控制由精确的系统修饰符组合触发的事件。
+有且只有Ctrl被按下的时候才触发<div class="language- extra-class"><pre class="language-text"><code>&lt;button @click.ctrl.exact=&quot;onCtrlClick&quot;&gt;A&lt;/button&gt;
+</code></pre></div></li> <li>鼠标按钮修饰符
+限制处理函数仅响应特定的鼠标按钮。
+·<code>.left、 .right、 .middle</code></li></ul></div> <!----> <hr> <!----></div> <!----></div></div> <footer class="footer" data-v-582f9766><div class="footer-left-wrap" data-v-582f9766><ul class="contact" data-v-582f9766><li class="contact-item" data-v-582f9766><a href="https://github.com/ulivz" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-582f9766><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-582f9766><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-582f9766></path></svg>
+          
+        </a></li><li class="contact-item" data-v-582f9766><a href="https://twitter.com/_ulivz" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-582f9766><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter" data-v-582f9766><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" data-v-582f9766></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-582f9766><ul class="copyright" data-v-582f9766><li class="copyright-item" data-v-582f9766><a href="https://policies.google.com/privacy?hl=en-US" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-582f9766>Privacy Policy</a></li><li class="copyright-item" data-v-582f9766><a href="/myblog/2020/02/05/vue12/.html" class="nav-link" data-v-582f9766>MIT Licensed | Copyright © 2018-present Vue.js</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/myblog/assets/js/app.83445d2a.js" defer></script><script src="/myblog/assets/js/6.6f8c6495.js" defer></script><script src="/myblog/assets/js/5.0a2aadd6.js" defer></script><script src="/myblog/assets/js/32.625eeea9.js" defer></script>
+  </body>
+</html>
